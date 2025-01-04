@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+.env
+.next/
+out/
+
+/backend/
+
+
+# Logs
+logs
+*.log
+
+# Debug files
+*.lock
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
