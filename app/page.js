@@ -30,7 +30,7 @@ export default function Home() {
 
   const handleRetrieveBooking = async (id) => {
     try {
-      const response = await fetch(`${backendUrl}/api/bookings/${id}`);
+      const response = await fetch(`${backendUrl}api/bookings/${id}`);
       if (response.ok) {
         const booking = await response.json(); // Expect a single booking object
         console.log('Retrieved booking:', booking);
@@ -48,7 +48,7 @@ export default function Home() {
 
   const handleDeleteBooking = async (id) => {
     try {
-      const response = await fetch(`${backendUrl}/api/bookings/${id}`, {
+      const response = await fetch(`${backendUrl}api/bookings/${id}`, {
         method: 'DELETE',
       });
       if (response.status === 204) {

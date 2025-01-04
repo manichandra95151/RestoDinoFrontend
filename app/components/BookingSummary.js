@@ -10,13 +10,14 @@ export default function BookingSummary({ bookingDetails, onConfirm, confirmed })
   const [confirmationMessage, setConfirmationMessage] = useState('');
   let BookingId=1;
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+  console.log(backendUrl);
 
   const handleConfirmBooking = async () => {
     if (confirmed || isSubmitting) return; // Prevent duplicate submissions
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${backendUrl}/api/bookings`, {
+      const response = await fetch(`${backendUrl}api/bookings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +60,7 @@ export default function BookingSummary({ bookingDetails, onConfirm, confirmed })
         <p><strong>Name:</strong> {bookingDetails.name}</p>
         <p><strong>Email:</strong> {bookingDetails.email}</p>
         <p><strong>Phone:</strong> {bookingDetails.phone}</p>
-        <p><strong>Phone:</strong> {BookingId++}</p>
+        <p><strong>Booking Id:</strong> {BookingId++}</p>
       </div>
 
       {confirmationMessage && (
